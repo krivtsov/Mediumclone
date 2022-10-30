@@ -13,5 +13,10 @@
     "incremental": true,
     "strict": true,
     // "strictPropertyInitialization": false,
+    "paths": {
+      "@app/*": [
+        "./src/*"
+      ]
+    }
   }
 }
