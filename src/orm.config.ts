@@ -1,6 +1,6 @@
-import { DataSourceOptions } from 'typeorm';
+import { DataSource, DataSourceOptions } from 'typeorm';
 
-const config: DataSourceOptions = {
+export const config: DataSourceOptions = {
   type: 'postgres',
   host: 'localhost',
   port: 5439,
@@ -8,8 +8,9 @@ const config: DataSourceOptions = {
   password: 'admin',
   database: 'medium_clone',
   entities: [__dirname + '/**/*.entity{.ts,.js}'],
-  synchronize: true,
+  synchronize: false,
   logging: true,
+  migrations: [__dirname + '/**/migrations/*{ts,js}'],
 };
 
-export default config;
+export default new DataSource(config);
